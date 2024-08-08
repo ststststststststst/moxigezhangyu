@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>洛谷题解：SP7169 EGYPIZZA - Pizza</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-4">
+    <a href="/index.html" class="btn btn-secondary mb-3">首页</a><a href="index.html" class="btn btn-secondary mb-3">文章</a>
+    <div class="card">
+      <div class="card-body">
+        <h1>洛谷题解：SP7169 EGYPIZZA - Pizza</h1>
+<h2>前言</h2>
+<p><s>这是本蒟蒻的第一篇题解，请多多指教！</s></p>
+<h2>题意：</h2>
+<p>输入 n 个分数，求向上取整所有分数的和并加 1 后的值。</p>
+<h2>题目分析：</h2>
+<p>先通分，单位统一，这样好算一点。然后把每个人吃的块数（分子）相加（<strong>别忘 Abotrika！</strong>），最后再除以 4 在向上取整，就是最后的答案。</p>
+<h2>代码:</h2>
+<pre><code class="language-cpp" data-rendered-lang="cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">int</span> n;
+<span class="hljs-built_in">string</span> s;<span class="hljs-comment">//储存分数</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-built_in">cin</span>&gt;&gt;n;
+    <span class="hljs-keyword">int</span> ans=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(n--){
+        <span class="hljs-built_in">cin</span>&gt;&gt;s;
+        <span class="hljs-keyword">if</span>(s==<span class="hljs-string">"1/4"</span>)ans+=<span class="hljs-number">1</span>;<span class="hljs-comment">// 1/4</span>
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(s==<span class="hljs-string">"1/2"</span>)ans+=<span class="hljs-number">2</span>;<span class="hljs-comment">//1/2||2/4</span>
+        <span class="hljs-keyword">else</span> ans+=<span class="hljs-number">3</span>;<span class="hljs-comment">//3/4</span>
+    }
+    ans+=<span class="hljs-number">1</span>;<span class="hljs-comment">//别忘了！</span>
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,<span class="hljs-built_in">ceil</span>(ans/<span class="hljs-number">4</span>)+<span class="hljs-number">1</span>);<span class="hljs-comment">//输出</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//养成好习惯！</span>
+}
+</code></pre>
+</div>
+<br><br>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS (Optional for Bootstrap features) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
